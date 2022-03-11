@@ -1,0 +1,36 @@
+
+@use 'variables' as v;
+
+main{
+    padding: 0 1rem;
+    background-color: whitesmoke;
+    width: 100%;
+
+    p{margin: 1rem 0;}
+
+
+    .films_container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        background-color: rgb(197, 193, 202);
+        padding: 1rem;
+        justify-content: flex-start;
+    }
+
+    .pelicula{
+        border: 1px solid black;
+        display: block;
+        padding: 0 10px;
+        
+        background-color: white;
+    }
+}
+
+.registro{
+
+    background-color: rgb(188, 222, 252);
+}
+form{
+    padding: 1rem;
+}
