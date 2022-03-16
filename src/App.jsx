@@ -1,16 +1,18 @@
-import "./styles/App.scss";
-import Header from "./components/Header";
-import Registro from "./components/Registro.tsx";
 
-import Home from "./components/Home";
-import Us from "./components/Us";
-
-import Footer from "./components/Footer";
-import E404 from "./components/E404";
-
-
+import LoginPage from "./pages/LoginPage.tsx";
+import RegisterPage from "./pages/RegisterPage.tsx";
+import AboutPage from "./pages/AboutPage";
+import HomePage from "./pages/HomePage";
+import Error404 from "./pages/Error404";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+/*
+import { fakeAuthProvider } from "./utils/auth";
+import PrivateRoute from "./routers/PrivateRoute";
+import AdminPage from "./pages/AdminPage";
+*/
+
 import { Fragment } from "react";
+import "./styles/App.scss";
 
 function App() {
   const persona = {
@@ -20,21 +22,16 @@ function App() {
 
   return (
     <Fragment>
-      <Router>
-        <Header />
-        <Registro />
+        <Router>
+          <Routes>
+            <Route path={"/us"} element={<AboutPage />} />
+            <Route path={"/singin"} element={<LoginPage />} />
+            <Route path={"/singup"} element={<RegisterPage />} />
 
-        <Routes>
-
-
-          <Route path={"/us"} element={<Us />}/>
-          <Route path={"/"} element={<Home persona={persona} />}/>
-          <Route path={"*"} element={ <E404 />}/>
-
-        </Routes>
-
-        <Footer />
-      </Router>
+            <Route path={"/"} element={<HomePage persona={persona} />} />
+            <Route path={"*"} element={<Error404 />} />
+          </Routes>
+        </Router>
     </Fragment>
   );
 }

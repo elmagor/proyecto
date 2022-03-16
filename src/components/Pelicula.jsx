@@ -1,22 +1,16 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 
-function Pelicula(props) {
+function Pelicula({titulo = "sin titulo"}) {
   return (
     <Fragment>
       <div className="pelicula">
-        <p>titulo: {props.titulo} </p>
+        <p>titulo: {titulo} </p>
       </div>
     </Fragment>
   );
 }
 
-Pelicula.propTypes = {
-  titulo: PropTypes.string,
-};
 
-Pelicula.defaultProps = {
-  titulo: "La jungla de cristal",
-};
+
 
 export default Pelicula;

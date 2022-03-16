@@ -1,0 +1,103 @@
+@use "variables" as v;
+
+.body_sing {
+  * {
+    --border: 1px solid red;
+  }
+
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+
+  width: 100%;
+  height: 100%;
+  border: 2px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+
+  .container_sing {
+    /*si no pongo height; 100% no se ve todo...*/  
+
+    /*si no pongo overflow */
+    --overflow: auto;   
+    margin-top: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgb(255, 146, 146);
+   
+
+
+  }
+
+  .App-logo {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid red;
+  }
+
+  h1 {
+    color: rgb(36, 36, 36);
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  .caja {
+    border-radius: 5px;
+    width: calc(300px + 1vw);
+    max-width: min(400px , 100%);
+    padding: v.$padding;
+    background-color: rgba(148, 165, 243, 0.048);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.24);
+
+    label,
+    .error,
+    p {
+      font-size: 14px;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 3px 0 10px 0;
+
+      .error {
+        color: red;
+      }
+    }
+
+    input[type="submit"] {
+      margin-top: 1rem;
+      color: white;
+      font-weight: bold;
+      background-color: rgb(36, 167, 255);
+      width: 100%;
+      padding: 4px;
+      border: 2xp solid red;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .input {
+      padding: 4px;
+
+      border-radius: 5px;
+      border: 1px solid rgb(32, 32, 32);
+
+      &:focus {
+        border: 1px solid rgb(32, 32, 32);
+        outline: none;
+        box-shadow: 0 0 3px v.$base-color;
+      }
+    }
+  }
+}
